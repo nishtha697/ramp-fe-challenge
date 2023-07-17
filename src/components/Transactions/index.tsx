@@ -1,11 +1,8 @@
-import { useCallback, useState } from "react"
+import { useCallback } from "react"
 import { useCustomFetch } from "src/hooks/useCustomFetch"
 import { SetTransactionApprovalParams } from "src/utils/types"
 import { TransactionPane } from "./TransactionPane"
-import {
-  SetTransactionApprovalFunction,
-  TransactionsComponent,
-} from "./types"
+import { SetTransactionApprovalFunction, TransactionsComponent } from "./types"
 
 export const Transactions: TransactionsComponent = ({ transactions, setApproved, getApprovalState }) => {
   const { fetchWithoutCache, loading } = useCustomFetch()
@@ -16,7 +13,7 @@ export const Transactions: TransactionsComponent = ({ transactions, setApproved,
         transactionId,
         value: newValue,
       })
-      setApproved(transactionId, newValue);
+      setApproved(transactionId, newValue)
     },
     [fetchWithoutCache, setApproved]
   )
